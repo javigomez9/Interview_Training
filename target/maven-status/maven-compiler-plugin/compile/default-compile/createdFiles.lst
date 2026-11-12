@@ -1,0 +1,6 @@
+mx/aplazo/bnpl/schedule/Installment.class
+mx/aplazo/bnpl/schedule/PaymentScheduleGenerator.class
+mx/aplazo/bnpl/schedule/ScheduleValidationException$ErrorCode.class
+mx/aplazo/bnpl/schedule/PaymentSchedule.class
+mx/aplazo/bnpl/schedule/InstallmentStatus.class
+mx/aplazo/bnpl/schedule/ScheduleValidationException.class

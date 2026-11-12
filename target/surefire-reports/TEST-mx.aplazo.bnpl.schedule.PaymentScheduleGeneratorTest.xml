@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="mx.aplazo.bnpl.schedule.PaymentScheduleGeneratorTest" time="0.031" tests="19" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="27"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/javiergomez/Documents/Desarrollos/Interview_training/Interview_Training/target/test-classes:/Users/javiergomez/Documents/Desarrollos/Interview_training/Interview_Training/target/classes:/Users/javiergomez/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.2/junit-jupiter-5.10.2.jar:/Users/javiergomez/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.2/junit-jupiter-api-5.10.2.jar:/Users/javiergomez/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/javiergomez/.m2/repository/org/junit/platform/junit-platform-commons/1.10.2/junit-platform-commons-1.10.2.jar:/Users/javiergomez/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/javiergomez/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.2/junit-jupiter-params-5.10.2.jar:/Users/javiergomez/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2.jar:/Users/javiergomez/.m2/repository/org/junit/platform/junit-platform-engine/1.10.2/junit-platform-engine-1.10.2.jar:"/>
+    <property name="java.vm.vendor" value="Homebrew"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="27"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="AR"/>
+    <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/27.0.1.0.3/libexec/openjdk.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/javiergomez/Documents/Desarrollos/Interview_training/Interview_Training/target/surefire/surefirebooter-20261111114744106_3.jar /Users/javiergomez/Documents/Desarrollos/Interview_training/Interview_Training/target/surefire 2026-11-11T11-47-44_068-jvmRun1 surefire-20261111114744106_1tmp surefire_0-20261111114744106_2tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/javiergomez/Documents/Desarrollos/Interview_training/Interview_Training/target/test-classes:/Users/javiergomez/Documents/Desarrollos/Interview_training/Interview_Training/target/classes:/Users/javiergomez/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.2/junit-jupiter-5.10.2.jar:/Users/javiergomez/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.2/junit-jupiter-api-5.10.2.jar:/Users/javiergomez/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/javiergomez/.m2/repository/org/junit/platform/junit-platform-commons/1.10.2/junit-platform-commons-1.10.2.jar:/Users/javiergomez/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/javiergomez/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.2/junit-jupiter-params-5.10.2.jar:/Users/javiergomez/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2.jar:/Users/javiergomez/.m2/repository/org/junit/platform/junit-platform-engine/1.10.2/junit-platform-engine-1.10.2.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/javiergomez"/>
+    <property name="user.language" value="es"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2026-10-24"/>
+    <property name="java.home" value="/opt/homebrew/Cellar/openjdk/27.0.1.0.3/libexec/openjdk.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/javiergomez/Documents/Desarrollos/Interview_training/Interview_Training"/>
+    <property name="java.vm.compressedOopsMode" value="Non-zero disjoint base"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="surefire.real.class.path" value="/Users/javiergomez/Documents/Desarrollos/Interview_training/Interview_Training/target/surefire/surefirebooter-20261111114744106_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="27.0.1.0.3"/>
+    <property name="user.name" value="javiergomez"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="27.2"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Homebrew"/>
+    <property name="localRepository" value="/Users/javiergomez/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="java.io.tmpdir" value="/var/folders/r3/w5sndw7j1kb9sx9__nhcnn6w0000gn/T/"/>
+    <property name="java.version" value="27.0.1.0.3"/>
+    <property name="user.dir" value="/Users/javiergomez/Documents/Desarrollos/Interview_training/Interview_Training"/>
+    <property name="os.arch" value="aarch64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/javiergomez/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Homebrew"/>
+    <property name="java.vm.version" value="27.0.1.0.3"/>
+    <property name="stdin.encoding" value="UTF-8"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="71.0"/>
+  </properties>
+  <testcase name="malformedDateFormatIsRejected" classname="mx.aplazo.bnpl.schedule.PaymentScheduleGeneratorTest" time="0.013"/>
+  <testcase name="exactDivisionWithoutCommission" classname="mx.aplazo.bnpl.schedule.PaymentScheduleGeneratorTest" time="0.002"/>
+  <testcase name="invariantHoldsWithPeriodicCommissionRateAcrossAllInstallmentCounts" classname="mx.aplazo.bnpl.schedule.PaymentScheduleGeneratorTest" time="0.0"/>
+  <testcase name="negativeAmountIsRejected" classname="mx.aplazo.bnpl.schedule.PaymentScheduleGeneratorTest" time="0.001"/>
+  <testcase name="amountIsSilentlyRoundedToTwoDecimalsHalfUp" classname="mx.aplazo.bnpl.schedule.PaymentScheduleGeneratorTest" time="0.0"/>
+  <testcase name="invalidCalendarDateIsRejected" classname="mx.aplazo.bnpl.schedule.PaymentScheduleGeneratorTest" time="0.001"/>
+  <testcase name="amountsAlwaysExposeExactlyTwoDecimalsRegardlessOfTrailingZeros" classname="mx.aplazo.bnpl.schedule.PaymentScheduleGeneratorTest" time="0.0"/>
+  <testcase name="endOfMonthAndLeapYearDateRollover" classname="mx.aplazo.bnpl.schedule.PaymentScheduleGeneratorTest" time="0.001"/>
+  <testcase name="tooFewInstallmentsIsRejected" classname="mx.aplazo.bnpl.schedule.PaymentScheduleGeneratorTest" time="0.0"/>
+  <testcase name="invalidMonthIsRejected" classname="mx.aplazo.bnpl.schedule.PaymentScheduleGeneratorTest" time="0.001"/>
+  <testcase name="nonLeapYearFebruary29IsRejected" classname="mx.aplazo.bnpl.schedule.PaymentScheduleGeneratorTest" time="0.0"/>
+  <testcase name="tooManyInstallmentsIsRejected" classname="mx.aplazo.bnpl.schedule.PaymentScheduleGeneratorTest" time="0.001"/>
+  <testcase name="realLeapYearFebruary29IsAccepted" classname="mx.aplazo.bnpl.schedule.PaymentScheduleGeneratorTest" time="0.0"/>
+  <testcase name="firstInstallmentDueDateMatchesPurchaseDateAndIsPaid" classname="mx.aplazo.bnpl.schedule.PaymentScheduleGeneratorTest" time="0.0"/>
+  <testcase name="inexactDivisionAdjustsCentsOnFirstInstallment" classname="mx.aplazo.bnpl.schedule.PaymentScheduleGeneratorTest" time="0.0"/>
+  <testcase name="negativeCommissionRateIsRejected" classname="mx.aplazo.bnpl.schedule.PaymentScheduleGeneratorTest" time="0.001"/>
+  <testcase name="zeroAmountIsRejected" classname="mx.aplazo.bnpl.schedule.PaymentScheduleGeneratorTest" time="0.0"/>
+  <testcase name="yearBoundaryDateRollover" classname="mx.aplazo.bnpl.schedule.PaymentScheduleGeneratorTest" time="0.0"/>
+  <testcase name="commissionItselfRequiresRoundingBeforeSplitting" classname="mx.aplazo.bnpl.schedule.PaymentScheduleGeneratorTest" time="0.0"/>
+</testsuite>
