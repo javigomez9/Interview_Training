@@ -21,6 +21,8 @@ public final class PaymentScheduleGenerator {
     private static final int INSTALLMENT_INTERVAL_DAYS = 15;
     private static final int MONEY_SCALE = 2;
     private static final RoundingMode MONEY_ROUNDING = RoundingMode.HALF_UP;
+    // Comfortably below Long.MAX_VALUE / 100, so totalAmount always converts to cents safely.
+    private static final BigDecimal MAX_TOTAL_AMOUNT = new BigDecimal("999999999999.99");
 
     private static final Pattern ISO_DATE_PATTERN = Pattern.compile("^\\d{4}-\\d{2}-\\d{2}$");
     // "uuuu" (proleptic year), not "yyyy" (year-of-era): STRICT resolution needs an
@@ -46,6 +48,7 @@ public final class PaymentScheduleGenerator {
                 .multiply(normalizedCommissionRate)
                 .setScale(MONEY_SCALE, MONEY_ROUNDING);
         BigDecimal totalAmount = normalizedAmount.add(totalCommission);
+        validateTotalAmount(totalAmount);
 
         List<Installment> schedule = buildSchedule(totalAmount, installments, firstDueDate);
 
@@ -73,12 +76,27 @@ public final class PaymentScheduleGenerator {
     }
 
     private static BigDecimal validateAmount(BigDecimal amount) {
-        if (amount == null || amount.compareTo(BigDecimal.ZERO) <= 0) {
+        if (amount == null) {
             throw new ScheduleValidationException(
                     ScheduleValidationException.ErrorCode.INVALID_AMOUNT,
                     "amount must be a finite number strictly greater than 0");
         }
-        return amount.setScale(MONEY_SCALE, MONEY_ROUNDING);
+        // Round first: a value like 0.001 is > 0 but rounds down to 0.00 and must be rejected.
+        BigDecimal normalizedAmount = amount.setScale(MONEY_SCALE, MONEY_ROUNDING);
+        if (normalizedAmount.compareTo(BigDecimal.ZERO) <= 0) {
+            throw new ScheduleValidationException(
+                    ScheduleValidationException.ErrorCode.INVALID_AMOUNT,
+                    "amount must be a finite number strictly greater than 0");
+        }
+        return normalizedAmount;
+    }
+
+    private static void validateTotalAmount(BigDecimal totalAmount) {
+        if (totalAmount.compareTo(MAX_TOTAL_AMOUNT) > 0) {
+            throw new ScheduleValidationException(
+                    ScheduleValidationException.ErrorCode.INVALID_AMOUNT,
+                    "amount plus commission must not exceed " + MAX_TOTAL_AMOUNT);
+        }
     }
 
     private static void validateInstallments(int installments) {

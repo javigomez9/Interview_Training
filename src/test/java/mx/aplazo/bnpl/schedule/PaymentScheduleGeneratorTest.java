@@ -112,6 +112,22 @@ class PaymentScheduleGeneratorTest {
     }
 
     @Test
+    void amountThatRoundsDownToZeroIsRejected() {
+        ScheduleValidationException exception = assertThrows(ScheduleValidationException.class, () ->
+                PaymentScheduleGenerator.generatePaymentSchedule(
+                        new BigDecimal("0.001"), 5, BigDecimal.ZERO, "2026-01-01"));
+        assertEquals(ScheduleValidationException.ErrorCode.INVALID_AMOUNT, exception.getErrorCode());
+    }
+
+    @Test
+    void amountExceedingMaximumSupportedTotalIsRejected() {
+        ScheduleValidationException exception = assertThrows(ScheduleValidationException.class, () ->
+                PaymentScheduleGenerator.generatePaymentSchedule(
+                        new BigDecimal("100000000000000000"), 5, BigDecimal.ZERO, "2026-01-01"));
+        assertEquals(ScheduleValidationException.ErrorCode.INVALID_AMOUNT, exception.getErrorCode());
+    }
+
+    @Test
     void tooFewInstallmentsIsRejected() {
         ScheduleValidationException exception = assertThrows(ScheduleValidationException.class, () ->
                 PaymentScheduleGenerator.generatePaymentSchedule(

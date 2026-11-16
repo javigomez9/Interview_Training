@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: payment-schedule-api
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus,metrics
+  tracing:
+    sampling:
+      probability: 1.0 # 100% sampling for this exercise; not appropriate for production traffic
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+logging:
+  level:
+    root: INFO
+    mx.aplazo.bnpl: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %5p [%X{requestId:-},%X{traceId:-},%X{spanId:-}] %logger{36} - %msg%n"
