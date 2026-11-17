@@ -105,6 +105,20 @@ class PaymentScheduleControllerIntegrationTest {
     }
 
     @Test
+    void generate_withUnsupportedHttpMethod_returns405WithMethodNotAllowedCode() throws Exception {
+        mockMvc.perform(get("/payment-schedule/generate"))
+                .andExpect(status().isMethodNotAllowed())
+                .andExpect(jsonPath("$.errorCode").value("METHOD_NOT_ALLOWED"));
+    }
+
+    @Test
+    void unknownPath_returns404WithNotFoundCode() throws Exception {
+        mockMvc.perform(get("/does-not-exist"))
+                .andExpect(status().isNotFound())
+                .andExpect(jsonPath("$.errorCode").value("NOT_FOUND"));
+    }
+
+    @Test
     void actuatorHealth_returns200Up() throws Exception {
         mockMvc.perform(get("/actuator/health"))
                 .andExpect(status().isOk())

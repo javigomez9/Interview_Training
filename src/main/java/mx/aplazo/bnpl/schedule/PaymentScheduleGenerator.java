@@ -21,8 +21,9 @@ public final class PaymentScheduleGenerator {
     private static final int INSTALLMENT_INTERVAL_DAYS = 15;
     private static final int MONEY_SCALE = 2;
     private static final RoundingMode MONEY_ROUNDING = RoundingMode.HALF_UP;
-    // Comfortably below Long.MAX_VALUE / 100, so totalAmount always converts to cents safely.
-    private static final BigDecimal MAX_TOTAL_AMOUNT = new BigDecimal("999999999999.99");
+    // Derived from the actual overflow boundary (Long.MAX_VALUE cents), not a separate magic
+    // literal, so it can never drift out of sync with MONEY_SCALE or the cents conversion below.
+    private static final BigDecimal MAX_TOTAL_AMOUNT = BigDecimal.valueOf(Long.MAX_VALUE).movePointLeft(MONEY_SCALE);
 
     private static final Pattern ISO_DATE_PATTERN = Pattern.compile("^\\d{4}-\\d{2}-\\d{2}$");
     // "uuuu" (proleptic year), not "yyyy" (year-of-era): STRICT resolution needs an
